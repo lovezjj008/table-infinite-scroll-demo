@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="//cdn.bootcss.com/knockout/3.4.2/knockout-min.js"></script>
+</head>
+<body >
+    <div id="app">
+    <div id="content" class="outterCtn" data-bind="event:{scroll:$root.handleScroll}">
+        <div style="position:absolute;overflow: hidden;width:1282px;background-color: #FFF">
+            <table data-bind="style:{transform:headtransform}" style="width:2050px;">
+            <colgroup>
+                <col width="250">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="450">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>第一列</th>
+                <th>第二列</th>
+                <th>第三列</th>
+                <th>第四列</th>
+                <th>第五列</th>
+                <th>第6列</th>
+                <th>第7列</th>
+                <th>第8列</th>
+                <th>第9列</th>
+                <th>第10列</th>
+                <th>第11列</th>
+                <th>第12列</th>
+                <th>第13列</th>
+            </tr>
+            </thead>
+        </table>
+        </div>
+        <table style="width:2050px;margin-top:45px;">
+            <colgroup>
+                <col width="250">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="450">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+            </colgroup>
+            <tbody data-bind="foreach:{data: rows, as: 'row'}">
+                <!-- ko if: row._isVisible -->
+                <tr>
+                    <td>
+                        <div data-bind="text:row._isVisible"></div>
+                        <div data-bind="text:$index">
+                        </div>
+                    </td>
+                    <td>
+                        <div data-bind="text:row.sex"></div>
+                        <input type="text" data-bind="value:row.name">
+                    </td>
+                    <td>
+                        <div data-bind="text:row.age"></div>
+                        <input type="text" data-bind="value:row.age">
+                    </td>
+                    <td>
+                        <div data-bind="text:row.cell"></div>
+                    </td>
+                    <td>
+                        <span data-bind="text:row.name">
+                        </span>
+                        <span data-bind="text:row.address"></span>
+                        <span data-bind="text:row.age"></span>
+                        <span data-bind="text:row.sex"></span>
+                        <span data-bind="text:row.cell"></span>
+                    </td>
+                    <td>
+                        <div data-bind="text:row.address"></div>
+                    </td>
+                    <td>
+                        <div data-bind="text:row.address"></div>
+                        <input type="text" data-bind="value:row.age">
+                    </td>
+                    <td>
+                        <y-test params="label: row.address"></y-test>
+                        <input type="text" data-bind="value:row.name">
+                    </td>
+                    <td>
+                        <y-test params="label: row.address"></y-test>
+                        <div data-bind="text:row.address"></div>
+                    </td>
+                    <td>
+                        <y-test params="label: row.address"></y-test>
+                        <input type="text" data-bind="value:row.age">
+                    </td>
+                    <td>
+                        <div data-bind="text:row.address"></div>
+                        <input type="text" data-bind="value:row.age">
+                    </td>
+                    <td>
+                        <div data-bind="text:row.address"></div>
+                    </td>
+                    <td>
+                        <y-test params="label: row.address"></y-test>
+                        <div data-bind="text:row.address"></div>
+                    </td>
+                </tr>
+                <!-- /ko -->
+                <!-- ko ifnot: row._isVisible -->
+                    <tr>
+                        <td>
+                            <div style="margin-top:52px"></div>
+                        </td>
+                    </tr>
+                <!-- /ko -->
+            </tbody>
+        </table>
+    </div>
+    </div>
+<script src="index.js"></script>
+</body>
+</html>

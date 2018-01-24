@@ -77,5 +77,7 @@ ko.components.register('y-test', {
   template: "<div class='tooltip' data-bind='text:label,click:click'></div>"
 })
 ko.applyBindings(vm, document.getElementById('app'))
-var data = generateData(10000)
-vm.rows(data)
+setTimeout(function () {
+  var data = generateData(10000)
+  vm.rows(data)
+})
